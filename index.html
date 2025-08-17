@@ -2,57 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Copper Bean Café</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-  <!-- Chatbot color customization for Copper Bean Café -->
   <style>
+    /* Chat widget brand colors and sizing for Copper Bean Café */
     :root {
-      /* Brand/Café Colors */
       --chat--color-primary: #b5895d;
       --chat--color-primary-shade-50: #a87647;
       --chat--color-primary-shade-100: #905f2d;
       --chat--color-secondary: #bf9270;
-      --chat--color-secondary-shade-50: #9a714e;
       --chat--color-white: #fff6ed;
-      --chat--color-light: #f9f6f2;
-      --chat--color-light-shade-50: #f4ece7;
+      --chat--color-light: #f9f5f1;
+      --chat--color-light-shade-50: #f4eadc;
       --chat--color-light-shade-100: #e7ccb0;
       --chat--color-medium: #e7ccb0;
       --chat--color-dark: #62442b;
       --chat--color-disabled: #d8b27c;
       --chat--color-typing: #b5895d;
 
-      /* Spacing/Rounding */
       --chat--spacing: 1.2rem;
       --chat--border-radius: 1rem;
 
-      /* Sizing */
-      --chat--window--width: 370px;
-      --chat--window--height: 570px;
+      /* Use responsive sizing for mobile */
+      --chat--window--width: 90vw;
+      --chat--window--height: 70vh;
 
-      /* Header */
       --chat--header--background: var(--chat--color-primary);
       --chat--header--color: var(--chat--color-white);
       --chat--header--padding: 1.3rem;
       --chat--heading--font-size: 2em;
 
-      /* Messages */
       --chat--message--border-radius: 1rem;
       --chat--message--bot--background: var(--chat--color-light);
       --chat--message--bot--color: var(--chat--color-dark);
       --chat--message--user--background: var(--chat--color-primary);
       --chat--message--user--color: var(--chat--color-white);
 
-      /* Chat Toggle (floating button) */
+      --chat--toggle--size: 58px;
       --chat--toggle--background: var(--chat--color-primary);
       --chat--toggle--hover--background: var(--chat--color-primary-shade-50);
       --chat--toggle--active--background: var(--chat--color-primary-shade-100);
       --chat--toggle--color: var(--chat--color-white);
-      --chat--toggle--size: 58px;
 
-      /* Input */
       --chat--textarea--height: 46px;
     }
   </style>
@@ -196,11 +189,14 @@
 
   <script src="script.js"></script>
 
-  <!-- n8n Chatbot Embed -->
+  <!-- Chatbot -->
+  <div id="n8n-chat"></div>
+
   <script type="module">
     import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
     createChat({
-      webhookUrl: 'http://localhost:5678/webhook/f0a8b38e-ea8e-407d-92ca-4325be8fed07/chat',
+      webhookUrl: 'http://localhost:5678/webhook/f0a8b38e-ea8e-407d-92ca-4325be8fed07/chat', // Replace with your actual public webhook URL
       target: '#n8n-chat',
       mode: 'window',
       showWelcomeScreen: false,
@@ -217,7 +213,6 @@
           inputPlaceholder: 'Type your message here...',
         }
       }
-      // other options can be added if needed
     });
   </script>
 </body>
