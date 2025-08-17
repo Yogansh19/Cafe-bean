@@ -89,6 +89,15 @@ nav {
     top: -9px; opacity: .14;
   }
 }
+@media(max-width:600px){
+  .n8n-chat [part="window"]{
+    width: 100vw !important;
+    height: 95vh !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: 0 !important;
+  }
+}
 
 .btn {
   margin-top: 1.6rem;
