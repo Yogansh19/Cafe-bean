@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Copper Bean Café</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+  <!-- Chatbot color customization for Copper Bean Café -->
+  <style>
+    :root {
+      /* Brand/Café Colors */
+      --chat--color-primary: #b5895d;
+      --chat--color-primary-shade-50: #a87647;
+      --chat--color-primary-shade-100: #905f2d;
+      --chat--color-secondary: #bf9270;
+      --chat--color-secondary-shade-50: #9a714e;
+      --chat--color-white: #fff6ed;
+      --chat--color-light: #f9f6f2;
+      --chat--color-light-shade-50: #f4ece7;
+      --chat--color-light-shade-100: #e7ccb0;
+      --chat--color-medium: #e7ccb0;
+      --chat--color-dark: #62442b;
+      --chat--color-disabled: #d8b27c;
+      --chat--color-typing: #b5895d;
+
+      /* Spacing/Rounding */
+      --chat--spacing: 1.2rem;
+      --chat--border-radius: 1rem;
+
+      /* Sizing */
+      --chat--window--width: 370px;
+      --chat--window--height: 570px;
+
+      /* Header */
+      --chat--header--background: var(--chat--color-primary);
+      --chat--header--color: var(--chat--color-white);
+      --chat--header--padding: 1.3rem;
+      --chat--heading--font-size: 2em;
+
+      /* Messages */
+      --chat--message--border-radius: 1rem;
+      --chat--message--bot--background: var(--chat--color-light);
+      --chat--message--bot--color: var(--chat--color-dark);
+      --chat--message--user--background: var(--chat--color-primary);
+      --chat--message--user--color: var(--chat--color-white);
+
+      /* Chat Toggle (floating button) */
+      --chat--toggle--background: var(--chat--color-primary);
+      --chat--toggle--hover--background: var(--chat--color-primary-shade-50);
+      --chat--toggle--active--background: var(--chat--color-primary-shade-100);
+      --chat--toggle--color: var(--chat--color-white);
+      --chat--toggle--size: 58px;
+
+      /* Input */
+      --chat--textarea--height: 46px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <div class="logo">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="none" class="logo-icon" aria-hidden="true">
+          <ellipse cx="16" cy="20" rx="12" ry="7" fill="#b5895d"/>
+          <ellipse cx="16" cy="13" rx="10.5" ry="5.5" fill="#d8b27c"/>
+          <ellipse cx="16" cy="18" rx="6.5" ry="3" fill="#fff6ed" opacity=".8"/>
+        </svg>
+        <span class="logo-text">Copper Bean Café</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#special">Special</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text fade-in">
+      <h1>Welcome to Copper Bean Café</h1>
+      <div class="steam"></div>
+      <p>Where every cup is crafted with passion and every moment is savored.</p>
+      <a href="#menu" class="btn">View Menu</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="fade-in">
+    <h2>About Us</h2>
+    <p>At Copper Bean Café, artisan coffee meets a touch of elegance. We are dedicated to high-quality beans, expertly roasted and brewed for you. Enjoy a refined, comfortable atmosphere with friendly service and irresistible pastries.</p>
+  </section>
+
+  <!-- Meet the Team -->
+  <section id="team" class="fade-in">
+    <h2>Meet the Barista Team</h2>
+    <div class="barista-list">
+      <div class="barista-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex" />
+        <h3>Alex Morgan</h3>
+        <p>Lead Barista & Latte Artiste<br>
+        <em>“Coffee tastes best with a smile!”</em>
+        </p>
+      </div>
+      <div class="barista-card">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Taylor" />
+        <h3>Taylor Kim</h3>
+        <p>Pastries & Espressos<br>
+        <em>“Life’s too short for bad croissants.”</em></p>
+      </div>
+      <div class="barista-card">
+        <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Jordan" />
+        <h3>Jordan Lee</h3>
+        <p>Roastmaster & Music Curator<br>
+        <em>“Your playlist, our beans.”</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="fade-in">
+    <h2>Signature Menu</h2>
+    <div class="menu-items">
+      <div class="menu-card">
+        <h3>Espresso</h3>
+        <p>Bold, smooth, Italiano.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Latte</h3>
+        <p>Creamy, velvety, perfectly balanced.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Cappuccino</h3>
+        <p>A delicate foam-topped treat.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Handcrafted Pastries</h3>
+        <p>Flaky, buttery, baked fresh each morning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Daily Special -->
+  <section id="special" class="fade-in">
+    <h2>Today's Special</h2>
+    <div class="special-box" onclick="this.classList.toggle('open')">
+      <h3>🍯 Honey Cinnamon Latte <span class="reveal">Click to discover!</span></h3>
+      <p class="special-desc">Drizzled honey, warming cinnamon, silky microfoam. The perfect hug-in-a-mug to brighten your day!</p>
+    </div>
+  </section>
+
+  <!-- Customer Reviews -->
+  <section id="reviews" class="fade-in">
+    <h2>Customer Testimonials</h2>
+    <div class="reviews-list">
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Ava" />
+        <p>"Copper Bean Café is my morning ritual. Friendly faces and perfect brew!"</p>
+        <span>- Ava L.</span>
+      </div>
+      <div class="review-card">
+        <img src="https://randomuser.me/api/portraits/men/18.jpg" alt="Eli" />
+        <p>"Their latte art is beautiful, and the pastries are unbelievable."</p>
+        <span>- Eli S.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram feed (mockup) -->
+  <section id="instagram" class="fade-in">
+    <h2>Follow Us</h2>
+    <div class="insta-feed">
+      <div class="insta-img"></div>
+      <div class="insta-img"></div>
+      <div class="insta-img"></div>
+    </div>
+    <p>@CopperBeanCafe</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="fade-in">
+    <h2>Contact</h2>
+    <p>123 Brew Lane, Melbourne &ndash; Open Daily 7am&ndash;8pm</p>
+    <a href="mailto:contact@copperbean.cafe" class="btn">Email Us</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Copper Bean Café. Handcrafted in Melbourne, Australia.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- n8n Chatbot Embed -->
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    createChat({
+      webhookUrl: 'http://localhost:5678/webhook/f0a8b38e-ea8e-407d-92ca-4325be8fed07/chat',
+      target: '#n8n-chat',
+      mode: 'window',
+      showWelcomeScreen: false,
+      initialMessages: [
+        'Welcome to Copper Bean Café! ☕',
+        'My name is BeanBot. How can I brighten your day or answer your coffee questions?'
+      ],
+      i18n: {
+        en: {
+          title: 'Welcome to Copper Bean Café! ☕',
+          subtitle: "Chat with us for menu info, store hours, or just to say hi!",
+          footer: '',
+          getStarted: 'New Chat',
+          inputPlaceholder: 'Type your message here...',
+        }
+      }
+      // other options can be added if needed
+    });
+  </script>
+</body>
+</html>
